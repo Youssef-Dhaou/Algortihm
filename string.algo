@@ -1,0 +1,34 @@
+ALGORITHM  sentence_length
+VAR
+    nb_words : INTEGER := 1
+    sentence_length : INTEGER := 0
+    nb_voy : INTEGER := 0
+    C : CHAR := ""
+    sentence : STRING := ""
+
+BEGIN
+WHILE (C <> ".") DO
+
+// get the the sentence's length
+    write("Please enter the C char");
+    read(C)
+    sentence := sentence + C
+    sentence_length := sentence_length +1
+
+    // get the the number of vowels
+    IF(C := 'a' OR C := 'e' OR C := 'i' OR C := 'o' OR C := 'u' OR C := 'A' OR C := 'E' OR C := 'I' OR C := 'O' OR C := 'U')
+    THEN
+    nb_voy = nb_voy + 1
+    END_IF
+
+// get the the number of words
+    IF( C:= " " )THEN
+    nb_words := nb_words+1
+    END_IF
+
+END_WHILE
+ // print the resulats in the screen 
+write("Length of the sentence: ", sentence_length);
+write("The numbre of vowels: ", nb_voy);
+write("The numbre of words in the sentence: ", nb_words);
+END
